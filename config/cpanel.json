@@ -1,0 +1,7 @@
+{
+  "APP_ENV": "production",
+  "APP_NAME": "DreamStore",
+  "SUPPORT_EMAIL": "",
+  "ENABLE_DEMO_DATA": "false",
+  "API_BASE_URL": "/api/"
+}

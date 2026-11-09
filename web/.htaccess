@@ -1,0 +1,37 @@
+RewriteEngine On
+RewriteBase /
+
+# CanvasKit uses WebAssembly streaming compilation. Shared hosts may otherwise
+# serve .wasm as application/octet-stream, which prevents Flutter from starting.
+<IfModule mod_mime.c>
+  AddType application/wasm .wasm
+</IfModule>
+
+# API routes belong to PHP, never to the Flutter single-page application.
+RewriteRule ^api(?:/|$) - [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+
+  # These filenames are reused on every Flutter deployment. Revalidate them so
+  # a browser cannot keep running an older local-storage build after live mode
+  # has been deployed. Immutable images/fonts may still use host caching.
+  <FilesMatch "^(?:flutter(?:_bootstrap|_service_worker)?\.js|flutter\.js|main\.dart\.js|version\.json|manifest\.json)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+
+  <Files "index.html">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </Files>
+</IfModule>

@@ -1,0 +1,9 @@
+# Copy this file to android/key.properties after creating your private upload
+# keystore. Never commit, upload, or send either file's secret values.
+storeFile=upload-keystore.jks
+storePassword=Areyouhappynow96@
+keyAlias=upload
+keyPassword=Areyouhappynow96
+
+# Windows .properties paths use escaped backslashes, for example:
+storeFile=C:\\Users\\YOUR_WINDOWS_USER\\upload-keystore.jks

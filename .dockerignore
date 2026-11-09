@@ -1,0 +1,13 @@
+.dart_tool
+.git
+.github
+.idea
+.vscode
+build
+coverage
+android/.gradle
+android/app/build
+ios/Pods
+*.iml
+*.log
+SAU INN LOGO1.png

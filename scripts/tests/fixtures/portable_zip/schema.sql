@@ -1,0 +1,1 @@
+-- Portable ZIP fixture, not the application schema.

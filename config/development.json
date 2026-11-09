@@ -1,0 +1,6 @@
+{
+  "APP_ENV": "development",
+  "APP_NAME": "DreamStore Dev",
+  "SUPPORT_EMAIL": "admin@sauinn.local",
+  "ENABLE_DEMO_DATA": "true"
+}

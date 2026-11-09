@@ -1,0 +1,17 @@
+:root { color-scheme: light; font-family: system-ui, sans-serif; color: #14312e; background: #eff5f3; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; padding: 40px 20px; background: radial-gradient(ellipse at top left, #c5e5dc, transparent 70%); }
+main { margin: auto; max-width: 560px; background: #fff; padding: 40px; border-radius: 28px; box-shadow: 0 20px 70px #173b3212; }
+.eyebrow { color: #18816b; font-size: 12px; letter-spacing: 2px; font-weight: 700; }
+h1 { font-size: clamp(28px, 6vw, 40px); letter-spacing: -1.5px; margin: 20px 0 12px; line-height: 1.12; }
+p, footer { color: #657772; line-height: 1.6; }
+form { margin-top: 28px; }
+label { display: block; font-size: 14px; font-weight: 600; margin: 18px 0 8px; }
+input { width: 100%; padding: 14px; border: 1px solid #d5e2dd; border-radius: 12px; font: inherit; outline-offset: 3px; }
+input:focus { outline-color: #18816b; }
+button { margin-top: 26px; width: 100%; border: 0; border-radius: 14px; padding: 16px; background: #146752; color: white; font: inherit; font-weight: 650; cursor: pointer; }
+button:hover { background: #0c5140; }
+button:focus-visible { outline: 3px solid #8cc9b7; outline-offset: 3px; }
+.notice { padding: 16px; background: #eff7f3; border: 1px solid #badace; border-radius: 14px; line-height: 1.6; }
+footer { font-size: 12px; margin-top: 28px; }
+@media (max-width: 480px) { main { padding: 26px; border-radius: 20px; } body { padding: 20px 12px; } }

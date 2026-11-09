@@ -1,0 +1,23 @@
+Options -Indexes
+DirectoryIndex index.php
+LimitRequestBody 8388608
+
+<FilesMatch "^(?:_bootstrap|private_path(?:\.example)?)\.php$">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "DENY"
+    Header always set Referrer-Policy "no-referrer"
+    Header always set Cache-Control "no-store, private, max-age=0"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # PHP/FastCGI on many cPanel hosts does not forward Bearer headers by default.
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>

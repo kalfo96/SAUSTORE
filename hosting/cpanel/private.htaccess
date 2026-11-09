@@ -1,0 +1,9 @@
+# Defence in depth if a host accidentally exposes the private folder.
+# The folder must still be installed OUTSIDE every public document root.
+<IfModule mod_authz_core.c>
+  Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+  Order allow,deny
+  Deny from all
+</IfModule>
