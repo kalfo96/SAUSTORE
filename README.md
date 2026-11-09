@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # DreamStore
 
 DreamStore is the stock desk for **The Dream of Sau Inn Beach
@@ -338,3 +339,6 @@ header files. For another provider, configure all unknown routes to serve
 Use HTTPS in production. Because inventory lives in browser storage, operators
 must use the same browser profile and hostname consistently; changing the
 domain creates a separate storage origin.
+=======
+# SAUSTORE
+>>>>>>> f87f46c3ffe500e88b6636cbe6504ec47c3fe754
